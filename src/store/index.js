@@ -34,6 +34,8 @@ export default new Vuex.Store({
       const data = await res.json();
       commit("setSearchTerm", payload);
       commit("setSearchResults", data);
+      commit("setMovieDetails", null);
+      commit("setMovieReviews", null);
     },
     async selectMovie({ commit }, movie) {
       const apiBaseUrl = "https://api.themoviedb.org/3";

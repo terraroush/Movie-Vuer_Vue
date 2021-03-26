@@ -37,7 +37,6 @@ export default {
     ...mapActions(["searchMovies"]),
 
     handleSubmit() {
-      console.log("Search for:", this.query);
       this.searchMovies(this.query);
     },
   },
