@@ -13,11 +13,13 @@
           </v-col>
         </v-row>
       </v-container>
+      <v-snackbar :value="notification" :timeout="-1" color="red">{{notification}}</v-snackbar>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import {mapState} from "vuex";
 import AppHeader from "./components/AppHeader.vue";
 import MovieDetails from "./components/MovieDetails.vue";
 import MovieReviews from './components/MovieReviews.vue';
@@ -29,7 +31,10 @@ export default {
     AppHeader,
     MovieDetails,
     MovieReviews,
-
   },
+  computed: {
+    ...mapState(["notification"])
+  }
+  
 };
 </script>
